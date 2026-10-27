@@ -1,0 +1,43 @@
+﻿<Page x:Class="WpfApp1.Pages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Лента новостей" Background="{x:Null}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок и кнопка Выйти -->
+        <TextBlock Grid.Row="0" Text="Лента новостей" 
+                   FontSize="24" FontWeight="Bold" Foreground="#6A0DAD"
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+            <Button Content="Сменить тему" Width="120" Height="30" Click="ToggleTheme_Click" Margin="0,0,10,0"/>
+            <Button Content="Выйти" Width="100" Height="30" Click="Logout_Click"/>
+        </StackPanel>
+        
+        <!-- Поле поиска -->
+        <TextBox x:Name="SearchBox" Grid.Row="1" Width="400" Height="30" 
+                 HorizontalAlignment="Center" VerticalAlignment="Center" 
+                 TextChanged="SearchBox_TextChanged">
+            <TextBox.ToolTip>Введите название статьи для поиска</TextBox.ToolTip>
+        </TextBox>
+
+        <!-- Список статей -->
+        <ListView x:Name="ListArticles" Grid.Row="2" Margin="20,0,20,20" BorderBrush="LightGray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="5" Margin="0,5,0,5" Padding="10">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="18" Foreground="#6A0DAD"/>
+                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap" Margin="0,10,0,0" FontSize="14"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

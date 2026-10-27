@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="56eacfed71de4e6aba85a8a6cb241af6" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.Article" Width="1.5" PointX="6" PointY="6.625" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.Category" Width="1.5" PointX="3.75" PointY="4.5" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.Comment" Width="1.5" PointX="8.25" PointY="4.25" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.Favorite" Width="1.5" PointX="11.25" PointY="7.5" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.History" Width="1.5" PointX="8.25" PointY="7.375" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.Like" Width="1.5" PointX="8.25" PointY="10.375" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.Subscription" Width="1.5" PointX="3" PointY="7.375" />
+        <EntityTypeShape EntityType="DB_BizzareTimesModel.User" Width="1.5" PointX="0.75" PointY="6.75" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Articles_Categories" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Articles_Users" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Comments_Articles" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Favorites_Articles" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_History_Articles" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Likes_Articles" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Comments_Users" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Favorites_Users" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_History_Users" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Likes_Users" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Subs_Author" />
+        <AssociationConnector Association="DB_BizzareTimesModel.FK_Subs_Subscriber" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,39 @@
+﻿<Page x:Class="WpfApp1.Pages.ChangePassPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Смена пароля">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Смена пароля" 
+                   FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Email:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBox x:Name="TbLogin" Grid.Row="1" Grid.Column="1" Width="220" Height="30" HorizontalAlignment="Left"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Текущий пароль:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="CurrentPasswordBox" Grid.Row="2" Grid.Column="1" Width="220" Height="30" HorizontalAlignment="Left"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Новый пароль:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="NewPasswordBox" Grid.Row="3" Grid.Column="1" Width="220" Height="30" HorizontalAlignment="Left"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Content="Повторите новый:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="4" Grid.Column="1" Width="220" Height="30" HorizontalAlignment="Left"/>
+
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <Button Content="Сохранить" Width="140" Height="35" Click="SavePass_Click"/>
+            <Button Content="Назад" Width="100" Height="35" Margin="10,0,0,0" Click="Back_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

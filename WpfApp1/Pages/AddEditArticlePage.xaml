@@ -1,0 +1,35 @@
+﻿<Page x:Class="WpfApp1.Pages.AddEditArticlePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Редактирование статьи">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Заголовок:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+        <TextBox x:Name="TbTitle" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center"/>
+
+        <TextBlock Text="Текст:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Margin="0,10,0,0" FontSize="16"/>
+        <TextBox x:Name="TbContent" Grid.Row="1" Grid.Column="1" Margin="0,10,0,10" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+
+        <TextBlock Text="Категория:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+        <ComboBox x:Name="CbCategory" Grid.Row="2" Grid.Column="1" Height="30" VerticalAlignment="Center" DisplayMemberPath="Name"/>
+
+        <TextBlock Text="Автор:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+        <ComboBox x:Name="CbAuthor" Grid.Row="3" Grid.Column="1" Height="30" VerticalAlignment="Center" DisplayMemberPath="Name"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="0,10,0,0">
+            <Button Content="Сохранить" Width="120" Height="35" Click="ButtonSave_Click"/>
+            <Button Content="Отмена" Width="120" Height="35" Margin="10,0,0,0" Click="ButtonCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

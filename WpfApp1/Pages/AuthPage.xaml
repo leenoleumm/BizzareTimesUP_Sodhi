@@ -1,0 +1,56 @@
+﻿<Page x:Class="WpfApp1.Pages.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Авторизация">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Вход в Bizzare Times"
+                   FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Email:"
+               HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBox x:Name="TextBoxLogin" Grid.Row="1" Grid.Column="1"
+                 Width="220" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="Пароль:"
+               HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Row="2" Grid.Column="1"
+                     Width="220" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="ButtonEnter" Content="Вход" Width="120" Height="32"
+                    Click="ButtonEnter_OnClick"/>
+            <Button x:Name="ButtonReg" Content="Регистрация" Width="120" Height="32"
+                    Margin="10,0,0,0" Click="ButtonReg_Click"/>
+        </StackPanel>
+
+        <Button x:Name="ButtonChangePassword" Grid.Row="4" Grid.Column="1"
+                Content="Смена пароля" Width="120" Height="32"
+                HorizontalAlignment="Left" Click="ButtonChangePassword_Click"/>
+
+        <!-- Блок капчи (скрыт по умолчанию) -->
+        <TextBox x:Name="captcha" Grid.Row="4" Grid.Column="0"
+                 Visibility="Hidden" IsReadOnly="True" FontSize="18"
+                 Width="140" Height="34" HorizontalAlignment="Right"
+                 Background="#EEE" Foreground="Red" FontStyle="Italic"
+                 TextAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal"
+                    HorizontalAlignment="Right" Visibility="Hidden" x:Name="captchaPanel">
+            <TextBox x:Name="captchaInput" Width="140" Height="30"/>
+            <Button x:Name="submitCaptcha" Content="Проверить" Width="90" Height="30"
+                    Margin="5,0,0,0" Click="submitCaptcha_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
