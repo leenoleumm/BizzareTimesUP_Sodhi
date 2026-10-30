@@ -66,7 +66,6 @@ namespace WpfApp1.Pages
 
             try
             {
-                // Если ID == 0, значит это новая статья
                 if (_currentArticle.ID == 0)
                 {
                     _currentArticle.CreatedAt = DateTime.Now;
@@ -75,7 +74,7 @@ namespace WpfApp1.Pages
 
                 DB_BizzareTimesEntities.GetContext().SaveChanges();
                 MessageBox.Show("Данные успешно сохранены!");
-                NavigationService?.GoBack(); // Возвращаемся к таблице
+                NavigationService?.GoBack(); 
             }
             catch (Exception ex)
             {

@@ -40,7 +40,6 @@
                 Content="Смена пароля" Width="120" Height="32"
                 HorizontalAlignment="Left" Click="ButtonChangePassword_Click"/>
 
-        <!-- Блок капчи (скрыт по умолчанию) -->
         <TextBox x:Name="captcha" Grid.Row="4" Grid.Column="0"
                  Visibility="Hidden" IsReadOnly="True" FontSize="18"
                  Width="140" Height="34" HorizontalAlignment="Right"
