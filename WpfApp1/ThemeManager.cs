@@ -23,12 +23,10 @@ namespace WpfApp1
             Application.Current.Resources.Clear();
             Application.Current.Resources.MergedDictionaries.Add(resourceDict);
 
-            // Перекрашиваем фон окна
             if (window != null)
             {
                 window.Background = IsDarkTheme ? new SolidColorBrush(Color.FromRgb(30, 30, 30)) : Brushes.White;
 
-                // Перекрашиваем все Page внутри окна
                 if (window.Content is Grid grid)
                 {
                     foreach (var child in grid.Children)

@@ -41,7 +41,6 @@ namespace WpfApp1.Pages
             {
                 try
                 {
-                    // Защита от удаления самого себя (если вдруг)
                     if (usersForRemoving.Any(u => u.ID == AuthPage.CurrentUserID))
                     {
                         MessageBox.Show("Вы не можете удалить самого себя!");

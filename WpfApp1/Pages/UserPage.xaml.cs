@@ -27,27 +27,22 @@ namespace WpfApp1.Pages
         {
             using (var db = new DB_BizzareTimesEntities())
             {
-                // Загружаем все статьи
                 var articles = db.Articles.ToList();
 
-                // Если в поле поиска есть текст — фильтруем по заголовку
                 if (!string.IsNullOrWhiteSpace(SearchBox.Text))
                 {
                     articles = articles.Where(a => a.Title.ToLower().Contains(SearchBox.Text.ToLower())).ToList();
                 }
 
-                // Сортируем по дате (новые сверху)
                 ListArticles.ItemsSource = articles.OrderByDescending(a => a.CreatedAt).ToList();
             }
         }
 
-        // Обработчик поиска (срабатывает при каждом вводе буквы)
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             LoadArticles();
         }
 
-        // Выход
         private void Logout_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             NavigationService?.Navigate(new AuthPage());

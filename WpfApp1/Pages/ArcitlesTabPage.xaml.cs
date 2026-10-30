@@ -41,7 +41,6 @@ namespace WpfApp1.Pages
             {
                 try
                 {
-                    // Просто удаляем статьи. SQL Server сам удалит комментарии и лайки благодаря CASCADE.
                     DB_BizzareTimesEntities.GetContext().Articles.RemoveRange(articlesForRemoving);
                     DB_BizzareTimesEntities.GetContext().SaveChanges();
 
@@ -62,7 +61,6 @@ namespace WpfApp1.Pages
 
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
-            // Берем выделенную строку
             var selectedArticle = DataGridArticles.SelectedItem as Article;
             if (selectedArticle == null)
             {

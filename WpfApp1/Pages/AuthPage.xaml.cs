@@ -27,7 +27,6 @@ namespace WpfApp1.Pages
             InitializeComponent();
         }
 
-        // Функция хэширования пароля (SHA1)
         public static string GetHash(string password)
         {
             using (var hash = SHA1.Create())
@@ -87,7 +86,6 @@ namespace WpfApp1.Pages
             }
         }
 
-        // Генерация случайной капчи
         public void CaptchaChange()
         {
             string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -98,7 +96,6 @@ namespace WpfApp1.Pages
             captchaInput.Clear();
         }
 
-        // Проверка введенной капчи
         private void submitCaptcha_Click(object sender, RoutedEventArgs e)
         {
             if (captchaInput.Text != captcha.Text)

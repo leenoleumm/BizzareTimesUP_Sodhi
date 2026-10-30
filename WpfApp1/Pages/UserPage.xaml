@@ -9,7 +9,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Заголовок и кнопка Выйти -->
         <TextBlock Grid.Row="0" Text="Лента новостей" 
                    FontSize="24" FontWeight="Bold" Foreground="#6A0DAD"
                    HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"/>
@@ -19,14 +18,12 @@
             <Button Content="Выйти" Width="100" Height="30" Click="Logout_Click"/>
         </StackPanel>
         
-        <!-- Поле поиска -->
         <TextBox x:Name="SearchBox" Grid.Row="1" Width="400" Height="30" 
                  HorizontalAlignment="Center" VerticalAlignment="Center" 
                  TextChanged="SearchBox_TextChanged">
             <TextBox.ToolTip>Введите название статьи для поиска</TextBox.ToolTip>
         </TextBox>
 
-        <!-- Список статей -->
         <ListView x:Name="ListArticles" Grid.Row="2" Margin="20,0,20,20" BorderBrush="LightGray">
             <ListView.ItemTemplate>
                 <DataTemplate>

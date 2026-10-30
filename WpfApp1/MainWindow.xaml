@@ -10,17 +10,14 @@
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
 
-        <!-- Кнопка Назад -->
         <Button Content="Назад" Width="80" Height="30"
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 Margin="10,0,0,0" Click="BtnBack_Click"/>
 
-        <!-- Фрейм для страниц (сюда будем загружать Авторизацию) -->
         <Frame x:Name="MainFrame" Grid.Row="1"
                NavigationUIVisibility="Hidden"
                Source="Pages/AuthPage.xaml"/>
 
-        <!-- Текущее время -->
         <TextBlock x:Name="DateTimeNow" Grid.Row="2"
                    HorizontalAlignment="Right" VerticalAlignment="Center"
                    Margin="0,0,15,0" FontSize="14" Foreground="Gray"/>

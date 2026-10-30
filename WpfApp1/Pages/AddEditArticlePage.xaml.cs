@@ -23,7 +23,6 @@ namespace WpfApp1.Pages
         {
             InitializeComponent();
 
-            // Загружаем списки для ComboBox
             CbCategory.ItemsSource = DB_BizzareTimesEntities.GetContext().Categories.ToList();
             CbAuthor.ItemsSource = DB_BizzareTimesEntities.GetContext().Users.ToList();
 
@@ -38,7 +37,6 @@ namespace WpfApp1.Pages
                 Title = "Добавление статьи";
             }
 
-            // Привязываем данные (если редактируем, поля заполнятся)
             DataContext = _currentArticle;
         }
 
@@ -61,7 +59,6 @@ namespace WpfApp1.Pages
                 return;
             }
 
-            // Записываем выбранные значения в объект
             _currentArticle.Title = TbTitle.Text;
             _currentArticle.Content = TbContent.Text;
             _currentArticle.CategoryID = ((Category)CbCategory.SelectedItem).ID;

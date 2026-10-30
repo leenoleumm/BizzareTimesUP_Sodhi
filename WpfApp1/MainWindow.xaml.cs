@@ -24,7 +24,6 @@ namespace WpfApp1
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Таймер для обновления времени каждую секунду
             var timer = new System.Windows.Threading.DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += (o, t) => DateTimeNow.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
@@ -33,7 +32,6 @@ namespace WpfApp1
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            // Подтверждение выхода
             if (MessageBox.Show("Вы уверены, что хотите выйти?", "Выход",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
                 e.Cancel = true;
@@ -41,7 +39,6 @@ namespace WpfApp1
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            // Кнопка "Назад" во фрейме
             if (MainFrame.CanGoBack) MainFrame.GoBack();
         }
     }

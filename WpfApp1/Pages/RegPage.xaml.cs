@@ -20,12 +20,11 @@ namespace WpfApp1.Pages
         public RegPage()
         {
             InitializeComponent();
-            comboBox.SelectedIndex = 0; // По умолчанию READER
+            comboBox.SelectedIndex = 0; 
         }
 
         private void regButton_Click(object sender, RoutedEventArgs e)
         {
-            // 1. Проверка заполнения
             if (string.IsNullOrEmpty(txtbxLog.Text) || string.IsNullOrEmpty(txtbxFIO.Text)
                 || string.IsNullOrEmpty(passBxFrst.Password) || string.IsNullOrEmpty(passBxScnd.Password))
             {
@@ -33,14 +32,12 @@ namespace WpfApp1.Pages
                 return;
             }
 
-            // 2. Проверка длины пароля
             if (passBxFrst.Password.Length < 6)
             {
                 MessageBox.Show("Пароль должен содержать минимум 6 символов!");
                 return;
             }
 
-            // 3. Проверка на английскую раскладку и цифры
             bool hasEnglish = true;
             bool hasDigit = false;
             foreach (char c in passBxFrst.Password)
@@ -52,14 +49,12 @@ namespace WpfApp1.Pages
             if (!hasEnglish) { MessageBox.Show("Пароль должен содержать только английские буквы и цифры!"); return; }
             if (!hasDigit) { MessageBox.Show("Пароль должен содержать хотя бы одну цифру!"); return; }
 
-            // 4. Проверка совпадения паролей
             if (passBxFrst.Password != passBxScnd.Password)
             {
                 MessageBox.Show("Пароли не совпадают!");
                 return;
             }
 
-            // 5. Запись в БД
             try
             {
                 using (var db = new DB_BizzareTimesEntities())
@@ -73,7 +68,7 @@ namespace WpfApp1.Pages
                     var newUser = new User
                     {
                         Email = txtbxLog.Text,
-                        Password = AuthPage.GetHash(passBxFrst.Password), // Берем функцию из AuthPage
+                        Password = AuthPage.GetHash(passBxFrst.Password), 
                         Name = txtbxFIO.Text,
                         Role = comboBox.Text
                     };
@@ -82,7 +77,7 @@ namespace WpfApp1.Pages
                     db.SaveChanges();
 
                     MessageBox.Show("Пользователь успешно зарегистрирован!");
-                    NavigationService?.GoBack(); // Возвращаемся на страницу авторизации
+                    NavigationService?.GoBack(); 
                 }
             }
             catch (Exception ex)
